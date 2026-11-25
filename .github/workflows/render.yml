@@ -1,0 +1,26 @@
+name: Render video
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: @remotion/github-action@v2
+        with:
+          command: npx remotion render HelloWorld out/hello-world.mp4 --concurrency=3
+          cache-dependencies: |
+            - package.json
+            - remotion.config.ts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rendered-video
+          path: out/*.mp4
+          retention-days: 30
