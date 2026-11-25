@@ -54,5 +54,6 @@ Atau pakai `@remotion/media-utils` (`createAudio`, `getAudioDuration`) untuk syn
 ## Catatan CI
 
 - Runner GitHub: 4 vCPU / ~16 GB RAM, **CPU-only** (tanpa GPU).
+- Workflow memakai `actions/setup-node` + `npm ci` + `npx remotion render` (self-contained, tidak bergantung action pihak ketiga). Remotion otomatis download Chromium saat render.
 - `--concurrency=3` di workflow dipilih sebagai keseimbangan aman; naikkan bila RAM masih longgar.
 - Artifact tersimpan 30 hari (bisa di-set via `retention-days`).

@@ -12,12 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: @remotion/github-action@v2
+      - uses: actions/setup-node@v4
         with:
-          command: npx remotion render HelloWorld out/hello-world.mp4 --concurrency=3
-          cache-dependencies: |
-            - package.json
-            - remotion.config.ts
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render video
+        run: npx remotion render HelloWorld out/hello-world.mp4 --concurrency=3
 
       - uses: actions/upload-artifact@v4
         with:
