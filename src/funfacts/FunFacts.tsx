@@ -15,7 +15,7 @@ const SCENES: {C: React.FC<SceneProps>; from: number; durationInFrames: number}[
 
 export const FunFacts: React.FC = () => (
   <AbsoluteFill style={{backgroundColor: C.cream, fontFamily: FONT}}>
-    <Audio src={staticFile("narration.wav")} />
+    <Audio src={staticFile("funfacts-narration.wav")} />
     {SCENES.map(({C: Scene, from, durationInFrames}) => (
       <Sequence key={from} from={from} durationInFrames={durationInFrames}>
         <Scene from={from} durationInFrames={durationInFrames} />
