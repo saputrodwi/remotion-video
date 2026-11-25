@@ -2,7 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {HelloWorld} from './compositions/HelloWorld';
 
-export const RemotionRoot: React.FC<()> = () => {
+export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
