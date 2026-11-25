@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Render video
-        run: npx remotion render HelloWorld out/hello-world.mp4 --concurrency=3
+        run: npx remotion render funfacts out/funfacts.mp4 --concurrency=3
 
       - uses: actions/upload-artifact@v4
         with:
