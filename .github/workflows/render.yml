@@ -29,6 +29,9 @@ jobs:
       - name: Render jxl-info
         run: npx remotion render jxl-info out/jxl-info.mp4 --concurrency=3
 
+      - name: Render minimoon-reel
+        run: npx remotion render minimoon-reel out/minimoon-reel.mp4 --concurrency=3
+
       - uses: actions/upload-artifact@v4
         with:
           name: rendered-videos

@@ -3,3 +3,6 @@ out/
 .remotion/
 .DS_Store
 *.log
+whisper.cpp
+.tmp
+out
